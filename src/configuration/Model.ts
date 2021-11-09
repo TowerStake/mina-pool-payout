@@ -2,7 +2,7 @@ import { keypair } from '@o1labs/client-sdk';
 
 export interface PaymentConfiguration {
     defaultCommissionRate: number;
-    commissionRatesByPublicKey: KeyCommissionRate,
+    commissionRatesByPublicKey: KeyCommissionRate;
     stakingPoolPublicKey: string;
     payoutMemo: string;
     payorSendTransactionFee: number;
@@ -17,5 +17,5 @@ export interface PaymentConfiguration {
 }
 
 export interface KeyCommissionRate {
-    [publicKey: string] : {commissionRate: number}
+    [publicKey: string]: { commissionRate: number };
 }

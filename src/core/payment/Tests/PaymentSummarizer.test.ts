@@ -6,11 +6,12 @@ import { PaymentSummarizer } from '../PaymentSummarizer';
 describe('Payment Summarizer tests', () => {
     describe('should be succesful', () => {
         it('when payment process is finished', () => {
-
             const mockFileWriter: IFileWriter = {
                 write: (filename, obj) => {
-                    return new Promise(() => {})
-                }
+                    return new Promise(() => {
+                        return 0;
+                    });
+                },
             };
 
             const summarizer = new PaymentSummarizer(mockFileWriter);

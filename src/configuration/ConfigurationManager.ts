@@ -21,7 +21,7 @@ export class ConfigurationManager {
             blockDataSource: process.env.BLOCK_DATA_SOURCE || 'ARCHIVEDB',
             verbose: args.verbose,
             payoutHash: args.payouthash,
-            payoutThreshold: Number(process.env.SEND_PAYOUT_THRESHOLD) * 1000000000 || 0
+            payoutThreshold: Number(process.env.SEND_PAYOUT_THRESHOLD) * 1000000000 || 0,
         };
         if (Number.isNaN(this.Setup.defaultCommissionRate)) {
             console.log('ERROR: Comission Rate is not a number - please set COMMISSION_RATE in .env file');
@@ -42,9 +42,9 @@ const getComissionRates = async (): Promise<KeyCommissionRate> => {
     const path = `${__dirname}/../data/.negotiatedFees`;
 
     if (fs.existsSync(path)) {
-        let commissionRates: KeyCommissionRate = {}
+        const commissionRates: KeyCommissionRate = {};
 
-        console.log('Found .negotiatedFees file. Using Payor Specific Commission Rates.')
+        console.log('Found .negotiatedFees file. Using Payor Specific Commission Rates.');
 
         const raw = fs.readFileSync(path, 'utf-8');
 

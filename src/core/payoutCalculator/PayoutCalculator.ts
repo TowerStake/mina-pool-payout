@@ -15,7 +15,7 @@ export class PayoutCalculator implements IPayoutCalculator {
         stakers: Stake[],
         totalStake: number,
         defaultCommissionRate: number,
-        commissionRates: KeyCommissionRate
+        commissionRates: KeyCommissionRate,
     ): Promise<
         [payoutJson: PayoutTransaction[], storePayout: PayoutDetails[], blocksIncluded: number[], totalPayout: number]
     > {
@@ -140,7 +140,7 @@ export class PayoutCalculator implements IPayoutCalculator {
                     amount: amount,
                     fee: 0,
                     amountMina: 0,
-                    feeMina: 0
+                    feeMina: 0,
                 });
                 totalPayout += amount;
             }

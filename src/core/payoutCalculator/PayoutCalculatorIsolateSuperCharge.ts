@@ -15,7 +15,7 @@ export class PayoutCalculatorIsolateSuperCharge implements IPayoutCalculator {
         stakers: Stake[],
         totalStake: number,
         defaultCommissionRate: number,
-        commissionRates: KeyCommissionRate
+        commissionRates: KeyCommissionRate,
     ): Promise<
         [payoutJson: PayoutTransaction[], storePayout: PayoutDetails[], blocksIncluded: number[], totalPayout: number]
     > {
